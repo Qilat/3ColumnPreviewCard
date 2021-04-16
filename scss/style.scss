@@ -1,0 +1,166 @@
+@font-face {
+    font-family: "LexendDeca-Regular";
+    src: url(../fonts/LexendDeca-Regular.ttf);
+}
+
+@font-face {
+    font-family: "BigShouldersDisplay-Regular";
+    src: url(../fonts/BigShouldersDisplay-Regular.ttf);
+}
+
+$breakpoint-phone: 675px;
+$very-light-gray: hsl(0, 0%, 95%);
+$bright-orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+
+html, body, .main {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    @media (min-width: $breakpoint-phone) {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    
+    background-color: #f0f0f0;
+}
+
+.main {
+    
+    .main-container {
+        
+        background-color: $very-light-gray;
+        
+        @media (min-width: $breakpoint-phone) {
+            border-radius: 10px;
+            -webkit-box-shadow: 1px 4px 16px -2px rgba(0,0,0,0.76);
+            box-shadow: 1px 4px 16px -2px rgba(0,0,0,0.76);
+            
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            
+            margin: 0 7% 0 7%;
+        }
+        
+        .columns-container {
+            
+            display: flex;
+            height: auto;
+            
+            @media (min-width: $breakpoint-phone) {
+                flex-direction: row;
+                margin: 10% 15% 10% 15%;
+                :first-child {
+                    border-radius: 10px 0 0 10px;
+                }
+                
+                :last-child {
+                    border-radius: 0 10px 10px 0;
+                }
+                
+            }
+            
+            @media (max-width: $breakpoint-phone) {
+                margin: 30px 10px;
+    
+                flex-direction: column;
+                
+                :first-child {
+                    border-radius: 10px 10px 0 0;
+                }
+                
+                :last-child {
+                    border-radius: 0 0 10px 10px;
+                }
+                
+            }
+            
+            .column {
+                &.bg-bright-orange {
+                    background-color: $bright-orange;
+                    
+                    input {
+                        color: $bright-orange;
+                    }
+                }
+                
+                &.bg-dark-cyan {
+                    background-color: $dark-cyan;
+                    
+                    input {
+                        color: $dark-cyan;
+                    }
+                }
+                
+                &.bg-very-dark-cyan {
+                    background-color: $very-dark-cyan;
+                    
+                    input {
+                        color: $very-dark-cyan;
+                    }
+                }
+                
+                .column-content {
+                    padding: 10%;
+                    
+                    .column-title {
+                        color: $very-light-gray;
+                        font-size: 30px;
+                        font-weight: 700;
+                        font-family: 'BigShouldersDisplay-Regular';
+                        text-transform: uppercase;
+                        
+                        margin: 20px 0 20px 0;
+                        
+                    }
+                    
+                    .column-text {
+                        color: hsla(0, 0%, 100%, 0.75);
+                        font-size: 15px;
+                        font-weight: 400;
+                        font-family: 'LexendDeca-Regular';
+                    }
+                    
+                    .column-btn {
+                        margin-top: 55px;
+                        margin-bottom: 20px;
+                        
+                        input {
+                            font-size: 15px;
+                            font-weight: 400;
+                            font-family: 'LexendDeca-Regular';
+                            
+                            border: 2px $very-light-gray solid;
+                            border-radius: 20px;
+                            background-color: $very-light-gray;
+                            
+                            padding: 10px 15px 10px 15px;
+                            
+                            &:focus {
+                                outline: 0;
+                            }
+                            
+                            &:hover {
+                                cursor: pointer;
+                            }
+                            
+                            &:active {
+                                background-color: rgba(0, 0, 0, 0);
+                                color: $very-light-gray;
+                                
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+
